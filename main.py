@@ -1,3 +1,5 @@
+#by Andre P
+
 from hashCal import hashCal
 
 if __name__ == "__main__":
