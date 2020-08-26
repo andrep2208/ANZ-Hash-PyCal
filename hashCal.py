@@ -19,6 +19,7 @@ class hashCal:
 
     def doCalculate(self):
         result = 0
+        currentHash = ""
         accountList = []
         filePath = self.path + self.fileName
         with open(filePath, newline = '') as orginalFile:                                                                                          
@@ -27,6 +28,14 @@ class hashCal:
                 if(row[0] == "2"):
                     rowvalue = int(row[1][2:13])
                     result += rowvalue
+                
+                elif (row[0] == "3"):
+                    currentHash = row[3]
 
         resultString = str(result)
-        print("This is the hash number: " + resultString[-11:])
+
+        if(resultString == currentHash):
+            print("The current has number is correct: " + currentHash)
+        else:
+            print("This is the hash number: " + resultString[-11:])
+            print("This is the current has number: " + currentHash)
